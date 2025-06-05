@@ -36,15 +36,16 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
-    int TAMANHO = 10, NAVIO = 3;
-    int tabuleiro[10][10];
-    int i, j, valido;
-    int linha1 = 2, coluna1 = 4;
-    int linha2 = 5, coluna2 = 1;
-    int linha3 = 0, coluna3 = 0;
-    int linha4 = 0, coluna4 = 9;
+    int TAMANHO = 10, NAVIO = 3; // Tamanho do tabuleiro e Navio
+    int tabuleiro[10][10]; // matriz 10 x 10 que representa o tabuleiro
+    int i, j, valido; // contadores dos loops e verificação de posiçao valida
+    // Coordenadas de cada navio
+    int linha1 = 2, coluna1 = 4; // Navio 1
+    int linha2 = 5, coluna2 = 1; // Navio 2
+    int linha3 = 0, coluna3 = 0; // Navio 3
+    int linha4 = 0, coluna4 = 9; // Navio 4
 
-    // Iniciando o tabuleiro com 0 (água)
+    // Iniciando o tabuleiro com 0 em todas as posições(água)
     for (i = 0; i < TAMANHO; i++) {
         for (j = 0; j < TAMANHO; j++) {
             tabuleiro[i][j] = 0;
