@@ -36,5 +36,14 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
+    int TAMANHO = 10, NAVIO = 3;
+    int tabuleiro[10][10];
+    int i, j, valido;
+    int linha1 = 2, coluna1 = 4;
+    int linha2 = 5, coluna2 = 1;
+    int linha3 = 0, coluna3 = 0;
+    int linha4 = 0, coluna4 = 9;
+
+    
     return 0;
 }
