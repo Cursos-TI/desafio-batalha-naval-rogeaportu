@@ -50,5 +50,22 @@ int main() {
             tabuleiro[i][j] = 0;
         }
     }
+
+
+    // __________ NAVIO 1: Horizontal __________
+    // Verifica sobreposicao, tamanho, limite
+    if (coluna1 + NAVIO <= TAMANHO) {
+        valido = 1;
+        for (j = coluna1; j < coluna1 + NAVIO; j++) {
+            if (tabuleiro[linha1][j] != 0) valido = 0;
+        }
+        if (valido) {
+            for (j = coluna1; j < coluna1 + NAVIO; j++) {
+                tabuleiro[linha1][j] = 3;
+            }
+        }
+    }
+
+    
     return 0;
 }
