@@ -44,6 +44,11 @@ int main() {
     int linha3 = 0, coluna3 = 0;
     int linha4 = 0, coluna4 = 9;
 
-    
+    // Iniciando o tabuleiro com 0 (água)
+    for (i = 0; i < TAMANHO; i++) {
+        for (j = 0; j < TAMANHO; j++) {
+            tabuleiro[i][j] = 0;
+        }
+    }
     return 0;
 }
