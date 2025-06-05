@@ -94,5 +94,20 @@ int main() {
         }
     }
 
+    // __________ NAVIO 4: 2 Diagonal __________
+    // Verifica sobreposicao, tamanho, limite
+
+    if (linha4 + NAVIO <= TAMANHO && coluna4 - NAVIO + 1 >= 0) {
+        valido = 1;
+        for (i = 0; i < NAVIO; i++) {
+            if (tabuleiro[linha4 + i][coluna4 - i] != 0) valido = 0;
+        }
+        if (valido) {
+            for (i = 0; i < NAVIO; i++) {
+                tabuleiro[linha4 + i][coluna4 - i] = 3;
+            }
+        }
+    }
+
     return 0;
 }
