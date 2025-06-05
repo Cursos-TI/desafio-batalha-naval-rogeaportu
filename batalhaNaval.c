@@ -98,17 +98,17 @@ int main() {
     // __________ NAVIO 4: 2 Diagonal __________
     // Verifica sobreposicao, tamanho, limite
 
-    if (linha4 + NAVIO <= TAMANHO && coluna4 - NAVIO + 1 >= 0) {
-        valido = 1;
+   if (linha4 + NAVIO <= TAMANHO && coluna4 + NAVIO <= TAMANHO) {
+    valido = 1;
+    for (i = 0; i < NAVIO; i++) {
+        if (tabuleiro[linha4 + i][coluna4 + i] != 0) valido = 0; // Verifica se está vazio
+    }
+    if (valido) {
         for (i = 0; i < NAVIO; i++) {
-            if (tabuleiro[linha4 + i][coluna4 - i] != 0) valido = 0;
-        }
-        if (valido) {
-            for (i = 0; i < NAVIO; i++) {
-                tabuleiro[linha4 + i][coluna4 - i] = 3;
-            }
+            tabuleiro[linha4 + i][coluna4 + i] = 3; // Posiciona o navio
         }
     }
+}
 // __________ Impressão do Tabuleiro __________
     printf("     A B C D E F G H I J\n");
     for (i = 0; i < TAMANHO; i++) {
