@@ -66,6 +66,19 @@ int main() {
         }
     }
 
-    
+    // __________ NAVIO 2: Vertical __________
+    // Verifica sobreposicao, tamanho, limite
+    if (linha2 + NAVIO <= TAMANHO) {
+        valido = 1;
+        for (i = linha2; i < linha2 + NAVIO; i++) {
+            if (tabuleiro[i][coluna2] != 0) valido = 0;
+        }
+        if (valido) {
+            for (i = linha2; i < linha2 + NAVIO; i++) {
+                tabuleiro[i][coluna2] = 3;
+            }
+        }
+    }
+
     return 0;
 }
