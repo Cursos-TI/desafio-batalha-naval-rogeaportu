@@ -43,7 +43,7 @@ int main() {
     int linha1 = 2, coluna1 = 4; // Navio 1
     int linha2 = 5, coluna2 = 1; // Navio 2
     int linha3 = 0, coluna3 = 0; // Navio 3
-    int linha4 = 0, coluna4 = 9; // Navio 4
+    int linha4 = 5, coluna4 = 5; // Navio 4
 
     // Iniciando o tabuleiro com 0 em todas as posições(água)
     for (i = 0; i < TAMANHO; i++) {
