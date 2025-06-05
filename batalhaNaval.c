@@ -108,6 +108,16 @@ int main() {
             }
         }
     }
+// __________ Impressão do Tabuleiro __________
+    printf("     A B C D E F G H I J\n");
+    for (i = 0; i < TAMANHO; i++) {
+        printf("%2d |", i + 1);
+        for (j = 0; j < TAMANHO; j++) {
+            printf(" %d", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
+
 
     return 0;
 }
