@@ -109,6 +109,73 @@ int main() {
         }
     }
 }
+
+  // Cone (forma de pirâmide para cima)
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            if (i <= 2 && j >= 2 - i && j <= 2 + i) {
+                cone[i][j] = 1;
+            } else {
+                cone[i][j] = 0;
+            }
+        }
+    }
+
+    // Cruz
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            if (i == 2 || j == 2) {
+                cruz[i][j] = 1;
+            } else {
+                cruz[i][j] = 0;
+            }
+        }
+    }
+
+    // Octaedro (losango centrado)
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            if (abs(i - 2) + abs(j - 2) <= 2) {
+                octaedro[i][j] = 1;
+            } else {
+                octaedro[i][j] = 0;
+            }
+        }
+    }
+
+    // Aplicando Cone (valor 1)
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            int li = origemConeL + i - 2;
+            int co = origemConeC + j - 2;
+            if (li >= 0 && li < TAMANHO && co >= 0 && co < TAMANHO && cone[i][j] == 1 && tabuleiro[li][co] == 0) {
+                tabuleiro[li][co] = 1;
+            }
+        }
+    }
+
+    // Aplicando Cruz (valor 5)
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            int li = origemCruzL + i - 2;
+            int co = origemCruzC + j - 2;
+            if (li >= 0 && li < TAMANHO && co >= 0 && co < TAMANHO && cruz[i][j] == 1 && tabuleiro[li][co] == 0) {
+                tabuleiro[li][co] = 5;
+            }
+        }
+    }
+
+    // Aplicando Octaedro (valor 8)
+    for (i = 0; i < 5; i++) {
+        for (j = 0; j < 5; j++) {
+            int li = origemOctaedroL + i - 2;
+            int co = origemOctaedroC + j - 2;
+            if (li >= 0 && li < TAMANHO && co >= 0 && co < TAMANHO && octaedro[i][j] == 1 && tabuleiro[li][co] == 0) {
+                tabuleiro[li][co] = 8;
+            }
+        }
+    }
+
 // __________ Impressão do Tabuleiro __________
     printf("     A B C D E F G H I J\n");
     for (i = 0; i < TAMANHO; i++) {
